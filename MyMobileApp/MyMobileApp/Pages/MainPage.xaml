@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyMobileApp.MainPage">
+    <ContentView>
+        <StackLayout Padding="0,20,0,0">
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+            <Label x:Name="MyLabel" Text="Reuters news" HorizontalOptions="Center" VerticalOptions="Center" />
+            <ListView ItemsSource="{Binding FeedItems}" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5,5,5,5">
+                                <Label Text="{Binding Title}" HorizontalOptions="Fill" Font="Bold" />
+                                <Label Text="{Binding Description}" HorizontalOptions="Fill" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentView>
+</ContentPage>
